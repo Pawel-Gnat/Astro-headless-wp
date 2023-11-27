@@ -45,7 +45,7 @@ a {
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   gap: 1rem;
 }
@@ -61,4 +61,10 @@ article {
 img {
   display: block;
   width: 100%;
+}
+
+@media (min-width > 520px) {
+  .container {
+    flex-direction: row;
+  }
 }
