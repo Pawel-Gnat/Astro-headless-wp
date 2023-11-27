@@ -1,0 +1,8 @@
+---
+const { post } = Astro.props;
+---
+
+<article class="card">
+  <h2>{post.node.title}</h2>
+  <a href=`/posts/${post.node.slug}`>Przejdź do wpisu</a>
+</article>

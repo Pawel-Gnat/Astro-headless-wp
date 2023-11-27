@@ -1,0 +1,16 @@
+---
+import Layout from "../../layout/Layout.astro";
+import { getPostBySlug } from "../../lib/api";
+
+const { slug } = Astro.params;
+
+const post = await getPostBySlug(slug);
+if (!post) return Astro.redirect("/404");
+
+const { title, content } = post.node;
+---
+
+<Layout title={title}>
+  <article set:html={content} />
+  <a href="/">Powrót do strony głównej</a>
+</Layout>
